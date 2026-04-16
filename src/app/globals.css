@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
+@theme {
+  --font-head: 'Bebas Neue', Impact, sans-serif;
+  --font-cond: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --fg: #ffffff;
+  --fg2: #d4d0c8;
+  --fg3: #999999;
+  --accent: #E87B2E;
+  --accent-bright: #F28C3A;
+  --accent-dark: #B85A14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Barlow', system-ui, sans-serif; background: var(--bg); color: var(--fg); }
+::selection { background: var(--accent); color: #000; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.font-head { font-family: 'Bebas Neue', Impact, sans-serif; }
+.font-cond { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; }
+
+a, a:hover, a:focus, a:active, a:visited { text-decoration: none !important; text-underline-offset: unset !important; text-decoration-line: none !important; }
+a:focus-visible { outline: none !important; }
+*:focus { outline: none !important; }
+*:focus-visible { outline: none !important; box-shadow: none !important; }
+
+/* Fix Next.js Image loading flash/line */
+img { display: block; border: 0; }
+span[style*="box-sizing"] { display: block !important; line-height: 0 !important; }
+[data-nimg] { display: block !important; }
+figure img, div img, a img { vertical-align: top; }
+
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-ticker { animation: ticker 40s linear infinite; }
+
+@keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(1.5); } }
+.animate-pulse-dot { animation: pulse-dot 2s infinite; }
+
+.blueprint-grid {
+  background-image: linear-gradient(rgba(232,123,46,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(232,123,46,.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright, #F28C3A));
+  z-index: 9998;
+  transition: width 0.1s linear;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Hover lift for cards */
+.hover-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s; }
+.hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+
+/* Text reveal line by line */
+@keyframes revealUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Orange underline draw */
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.draw-line {
+  position: relative;
+}
+.draw-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.draw-line:hover::after { transform: scaleX(1); }
+
+/* Parallax depth */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-slow { animation: floatSlow 6s ease-in-out infinite; }
+
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: .03;
+  pointer-events: none;
+  z-index: 9999;
 }
