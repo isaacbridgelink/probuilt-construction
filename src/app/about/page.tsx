@@ -14,7 +14,7 @@ export default function About() {
     <>
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
-        <Image src="/images/team-portrait.png" alt="Pro Built crew" fill className="object-cover" priority />
+        <Image src="/images/team-portrait.webp" alt="Pro Built crew" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pb-12">
           <AnimateIn>
@@ -30,7 +30,7 @@ export default function About() {
           <AnimateIn>
             <div className="relative">
               <div className="aspect-[3/4] bg-[#111] border border-white/5 overflow-hidden relative">
-                <Image src="/images/blueprints-planning.png" alt="Bryan Miller reviewing plans" fill className="object-cover" />
+                <Image src="/images/blueprints-planning.webp" alt="Bryan Miller reviewing plans" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-[#E87B2E] text-black p-6 text-center">
                 <div className="font-head text-5xl leading-none">33</div>

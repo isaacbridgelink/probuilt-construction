@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
-        <Image src="/images/blueprints-planning.png" alt="Construction planning" fill className="object-cover" priority />
+        <Image src="/images/blueprints-planning.webp" alt="Construction planning" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pb-12">
           <AnimateIn>

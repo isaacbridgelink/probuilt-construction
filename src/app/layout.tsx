@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "30+ years building Wyoming. Custom homes, concrete, excavation, snow removal. Built on Integrity. Driven by Results.",
     type: "website",
     url: "https://probuilt-construction.vercel.app",
-    images: ["/images/hero-wide.png"],
+    images: ["/images/hero-wide.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -35,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="noise-overlay">

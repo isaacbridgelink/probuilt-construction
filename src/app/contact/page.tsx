@@ -52,51 +52,32 @@ export default function Contact() {
 
           <AnimateIn delay={0.2}>
             <div className="bg-[#111] border border-white/5 border-t-[3px] border-t-[#E87B2E] p-8 md:p-10">
-              <h3 className="font-head text-2xl tracking-wider mb-8">REQUEST A QUOTE</h3>
-              {/* TODO: Replace with GHL form embed */}
-              <form className="space-y-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">First Name</label>
-                    <input type="text" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Last Name</label>
-                    <input type="text" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Phone</label>
-                    <input type="tel" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Email</label>
-                    <input type="email" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                </div>
-                <div>
-                  <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Service Needed</label>
-                  <select className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] outline-none appearance-none">
-                    <option value="">Select one...</option>
-                    <option>New Construction / Custom Home</option>
-                    <option>Concrete & Driveway Work</option>
-                    <option>Excavation</option>
-                    <option>Kitchen or Bathroom Remodel</option>
-                    <option>Snow Removal Contract</option>
-                    <option>Lawn Care & Landscaping</option>
-                    <option>Site Maintenance</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Project Details</label>
-                  <textarea rows={4} className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors resize-y" placeholder="Tell us about your project..." />
-                </div>
-                <button type="submit" className="w-full bg-[#E87B2E] text-black font-cond font-bold text-sm tracking-[2px] uppercase py-4 hover:bg-[#F28C3A] transition-colors flex items-center justify-center gap-3">
-                  Send Request <span>→</span>
-                </button>
-              </form>
+              <h3 className="font-head text-2xl tracking-wider mb-4">REQUEST A QUOTE</h3>
+              {/* GHL Form Embed */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <iframe
+                      src="https://api.leadconnectorhq.com/widget/form/CueV9qDpbEDqZkCqL8qa"
+                      style="width:100%;height:998px;border:none;border-radius:8px"
+                      id="inline-CueV9qDpbEDqZkCqL8qa-contact"
+                      data-layout="{'id':'INLINE'}"
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name="Inbound Website Form"
+                      data-height="998"
+                      data-layout-iframe-id="inline-CueV9qDpbEDqZkCqL8qa-contact"
+                      data-form-id="CueV9qDpbEDqZkCqL8qa"
+                      title="Inbound Website Form"
+                    ></iframe>
+                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                  `,
+                }}
+              />
             </div>
           </AnimateIn>
         </div>

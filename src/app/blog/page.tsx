@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const posts = [
-  { slug: "concrete-finish-guide", title: "How to Choose the Right Concrete Finish for Your Wyoming Driveway", excerpt: "Broom, stamped, or exposed aggregate? Here's what holds up best against Wyoming's freeze-thaw cycles.", image: "/images/concrete-finished.png", cat: "Concrete" },
-  { slug: "seasonal-snow-contracts", title: "Why Seasonal Snow Contracts Save You Money (And Headaches)", excerpt: "Per-push pricing sounds cheaper until the first big storm. Here's the real math behind seasonal contracts.", image: "/images/snow-plow-night.png", cat: "Snow Removal" },
-  { slug: "breaking-ground-wyoming", title: "5 Things to Know Before Breaking Ground on Your Wyoming Build", excerpt: "Permits, soil conditions, utility locates, and the prep work most contractors skip.", image: "/images/excavation-dig.png", cat: "Excavation" },
+  { slug: "concrete-finish-guide", title: "How to Choose the Right Concrete Finish for Your Wyoming Driveway", excerpt: "Broom, stamped, or exposed aggregate? Here's what holds up best against Wyoming's freeze-thaw cycles.", image: "/images/concrete-finished.webp", cat: "Concrete" },
+  { slug: "seasonal-snow-contracts", title: "Why Seasonal Snow Contracts Save You Money (And Headaches)", excerpt: "Per-push pricing sounds cheaper until the first big storm. Here's the real math behind seasonal contracts.", image: "/images/snow-plow-night.webp", cat: "Snow Removal" },
+  { slug: "breaking-ground-wyoming", title: "5 Things to Know Before Breaking Ground on Your Wyoming Build", excerpt: "Permits, soil conditions, utility locates, and the prep work most contractors skip.", image: "/images/excavation-dig.webp", cat: "Excavation" },
 ];
 
 export default function Blog() {

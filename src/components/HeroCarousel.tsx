@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/images/hero-wide.png",
-  "/images/custom-home-framing.png",
-  "/images/concrete-pour.png",
-  "/images/excavation-dig.png",
-  "/images/snow-plow-night.png",
+  "/images/hero-wide.webp",
+  "/images/custom-home-framing.webp",
+  "/images/concrete-pour.webp",
+  "/images/excavation-dig.webp",
+  "/images/snow-plow-night.webp",
 ];
 
 export function HeroCarousel() {
@@ -32,9 +32,12 @@ export function HeroCarousel() {
             src={src}
             alt={`Pro Built Construction project ${i + 1}`}
             fill
+            sizes="100vw"
+            quality={75}
             className="object-cover scale-110 transition-transform duration-[8000ms] ease-out"
             style={{ transform: i === current ? "scale(1.15)" : "scale(1.05)" }}
             priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}

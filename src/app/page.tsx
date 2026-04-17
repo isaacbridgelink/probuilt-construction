@@ -105,7 +105,7 @@ export default function Home() {
           </AnimateIn>
 
           <StaggerReveal className="grid md:grid-cols-3 gap-6">
-            {SERVICES.slice(0, 3).map((s, i) => (
+            {SERVICES.slice(0, 3).map((s) => (
               <StaggerItem key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="group block bg-[#1a1a1a] border border-white/5 hover:border-[#E87B2E]/30 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden h-full">
                   <div className="relative h-56 overflow-hidden">
@@ -173,9 +173,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Residential Driveway & Approach", cat: "Concrete", year: "2026", loc: "Gillette, WY", img: "/images/project-driveway.png" },
-              { title: "Commercial Site Prep", cat: "New Construction", year: "2025", loc: "Campbell County", img: "/images/project-site-prep.png" },
-              { title: "HOA Snow Contract", cat: "Snow Removal", year: "2025", loc: "Gillette, WY", img: "/images/project-snow-contract.png" },
+              { title: "Residential Driveway & Approach", cat: "Concrete", year: "2026", loc: "Gillette, WY", img: "/images/project-driveway.webp" },
+              { title: "Commercial Site Prep", cat: "New Construction", year: "2025", loc: "Campbell County", img: "/images/project-site-prep.webp" },
+              { title: "HOA Snow Contract", cat: "Snow Removal", year: "2025", loc: "Gillette, WY", img: "/images/project-snow-contract.webp" },
             ].map((project, i) => (
               <AnimateIn key={project.title} delay={i * 0.1}>
                 <div className="group bg-[#1a1a1a] border border-white/5 hover:border-[#E87B2E]/30 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden">
@@ -198,8 +198,8 @@ export default function Home() {
           {/* Second row — wide + regular */}
           <div className="grid md:grid-cols-2 gap-6 mt-6">
             {[
-              { title: "Shop Foundation & Slab Pour", cat: "Concrete", year: "2025", loc: "Wright, WY", img: "/images/project-foundation.png" },
-              { title: "Full Kitchen Renovation", cat: "Remodeling", year: "2024", loc: "Gillette, WY", img: "/images/project-remodel.png" },
+              { title: "Shop Foundation & Slab Pour", cat: "Concrete", year: "2025", loc: "Wright, WY", img: "/images/project-foundation.webp" },
+              { title: "Full Kitchen Renovation", cat: "Remodeling", year: "2024", loc: "Gillette, WY", img: "/images/project-remodel.webp" },
             ].map((project, i) => (
               <AnimateIn key={project.title} delay={i * 0.1}>
                 <div className="group bg-[#1a1a1a] border border-white/5 hover:border-[#E87B2E]/30 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden">
@@ -227,7 +227,7 @@ export default function Home() {
           <AnimateIn>
             <div className="relative">
               <div className="aspect-[3/4] bg-[#1a1a1a] border border-white/5 overflow-hidden relative">
-                <Image src="/images/blueprints-planning.png" alt="Bryan Miller reviewing plans" fill className="object-cover" />
+                <Image src="/images/blueprints-planning.webp" alt="Bryan Miller reviewing plans" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-[#E87B2E] text-black p-6 text-center">
                 <div className="font-head text-5xl leading-none">33</div>
@@ -304,7 +304,7 @@ export default function Home() {
 
       {/* ═══ CONTACT (on homepage) ═══ */}
       <section id="contact" className="py-24 md:py-36 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-12">
           <div>
             <AnimateIn>
               <span className="font-cond text-xs font-semibold tracking-[0.3em] uppercase text-[#E87B2E] mb-4 block">Get In Touch</span>
@@ -351,51 +351,32 @@ export default function Home() {
 
           <AnimateIn delay={0.2}>
             <div className="bg-[#111] border border-white/5 border-t-[3px] border-t-[#E87B2E] p-8 md:p-10">
-              <h3 className="font-head text-2xl tracking-wider mb-8">REQUEST A QUOTE</h3>
-              {/* TODO: Replace with GHL form embed */}
-              <form className="space-y-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">First Name</label>
-                    <input type="text" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Last Name</label>
-                    <input type="text" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Phone</label>
-                    <input type="tel" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                  <div>
-                    <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Email</label>
-                    <input type="email" className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors" />
-                  </div>
-                </div>
-                <div>
-                  <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Service Needed</label>
-                  <select className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] outline-none appearance-none">
-                    <option value="">Select one...</option>
-                    <option>New Construction / Custom Home</option>
-                    <option>Concrete &amp; Driveway Work</option>
-                    <option>Excavation</option>
-                    <option>Kitchen or Bathroom Remodel</option>
-                    <option>Snow Removal Contract</option>
-                    <option>Lawn Care &amp; Landscaping</option>
-                    <option>Site Maintenance</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="font-cond text-[10px] font-semibold tracking-[0.2em] uppercase text-[#999] mb-2 block">Project Details</label>
-                  <textarea rows={4} className="w-full bg-[#0a0a0a] border border-white/10 px-4 py-3 text-white focus:border-[#E87B2E] focus:ring-1 focus:ring-[#E87B2E]/30 outline-none transition-colors resize-y" placeholder="Tell us about your project..." />
-                </div>
-                <button type="submit" className="w-full bg-[#E87B2E] text-black font-cond font-bold text-sm tracking-[2px] uppercase py-4 hover:bg-[#F28C3A] transition-colors flex items-center justify-center gap-3">
-                  Send Request <span>→</span>
-                </button>
-              </form>
+              <h3 className="font-head text-2xl tracking-wider mb-4">REQUEST A QUOTE</h3>
+              {/* GHL Form Embed */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <iframe
+                      src="https://api.leadconnectorhq.com/widget/form/CueV9qDpbEDqZkCqL8qa"
+                      style="width:100%;min-height:700px;height:100%;border:none;border-radius:8px"
+                      id="inline-CueV9qDpbEDqZkCqL8qa"
+                      data-layout="{'id':'INLINE'}"
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name="Inbound Website Form"
+                      data-height="998"
+                      data-layout-iframe-id="inline-CueV9qDpbEDqZkCqL8qa"
+                      data-form-id="CueV9qDpbEDqZkCqL8qa"
+                      title="Inbound Website Form"
+                    ></iframe>
+                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                  `,
+                }}
+              />
             </div>
           </AnimateIn>
         </div>
